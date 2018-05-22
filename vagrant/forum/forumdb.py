@@ -11,7 +11,7 @@ def get_posts():
   c.execute("select content, time from posts order by time desc")
   posts = c.fetchall()
   db.close()
-  return bleach.clean(posts)
+  return posts
 
 def add_post(content):
   """Add a post to the 'database' with the current timestamp."""
